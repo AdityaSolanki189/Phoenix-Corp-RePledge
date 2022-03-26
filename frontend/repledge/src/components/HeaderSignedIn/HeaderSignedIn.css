@@ -3,7 +3,7 @@
 .holder{
     height: 8vh;
     background-color: var(--repledge-white);
-    box-shadow: -1px 2px 18px #c1f1ff;
+    box-shadow: -1px 2px 18px #afeafc;
     display: flex;
     align-items: center;
     position: sticky;
