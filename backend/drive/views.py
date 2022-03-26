@@ -70,4 +70,5 @@ def filter(request,loc):
             return Response(serializer.data,status=200)
 
         except: 
-            return Response("something went wrong",status=400)
+            return Response("something went wrong",status=400) 
+

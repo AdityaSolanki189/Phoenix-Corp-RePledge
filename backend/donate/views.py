@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 # serialization imports
 from django.core import serializers
-from .serializers import donateSerializer
+from .serializers import donateSerializer,trackerSerializer
 
 # rest_framework imports
 from rest_framework.renderers import JSONRenderer
@@ -15,7 +15,7 @@ from rest_framework import status
 
 import json
 
-from .models import donate
+from .models import donate, tracker
 # Create your views here.
 
 @api_view(["GET","POST"])
@@ -64,4 +64,19 @@ def details(request, pk):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 def home(request):
-    return HttpResponse("Api for repledge")
+    return HttpResponse("Api for repledge") 
+
+@api_view(["GET","POST"])
+def tracking(request):
+    if request.method == 'GET':
+        serializer1 = trackerSerializer(tracker.objects.all(), many=True)
+        return Response(serializer1.data)
+
+    elif request.method == 'POST':
+        serializer1 = trackerSerializer(data=request.data)
+        if serializer1.is_valid():
+            serializer1.save()
+
+            return Response(serializer1.data, status=status.HTTP_201_CREATED)
+
+        return Response(serializer1.errors, status=status.HTTP_400_BAD_REQUEST)
