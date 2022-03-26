@@ -12,7 +12,10 @@
 
 .whyUs>span{
     font-size: 2rem;
-    color: var(--repledge-lightGreen)
+    color: var(--repledge-lightGreen);
+    font-family: "'Playfair Display', serif";
+    font-weight:bold;
+    color:var(--repledge-darkerGrey)
 }
 
 .whyUs>p{
@@ -37,7 +40,7 @@
     .banner>img{
         /* width: 100%; */
         height: 100%;
-        box-shadow: -20px 0px 18px #c1f1ff;
+       
     }
 
     .whyUs{

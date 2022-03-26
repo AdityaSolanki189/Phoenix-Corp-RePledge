@@ -5,9 +5,9 @@
     height: 25vh;
     margin: 0.9rem;
     display: flex;
-    border: 2px solid var(--repledge-lightGreen);
+    /* border: 2px solid var(--repledge-lightRed); */
     border-radius: 1rem;
-    background-color: var(--repledge-lightGreenBackground);
+    background-color: var(--repledge-lightRedBackground);
 }
 
 .YourDonation>img{
@@ -26,23 +26,26 @@
 
 .YourDonation:hover{
     cursor: pointer;
-    background-color: var(--repledge-lightGreen);
+    /* background-color: var(--repledge-lightGreen); */
 }
 
 .donate_n_volunteer{
-    display: flex;
-    justify-content: space-around;
+    margin-top: 1rem;
+    /* display: flex;
+    justify-content: space-around; */
 }
 
 .donate{
     height: 35vw;
-    width: 48vw;
+    /* width: 48vw; */
     margin: 0.9rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    border: 2px solid var(--repledge-lightGreen);
+    /* border: 2px solid var(--repledge-lightGreen); */
     border-radius: 1rem;
     background-color: var(--repledge-lightGreenBackground);
+    box-shadow: 0 0 10px 4px rgb(0 0 0 / 5%);
 }
 
 .donate>img{
@@ -52,8 +55,8 @@
 }
 
 .donate>p{
-    color: white;
-    font-size: 8vw;
+    color: var(--repledge-darkerGrey);
+    font-size: 1.5rem;
     font-family: 'Times New Roman', Times, serif;
     margin-top: auto;
     margin-bottom: auto;
@@ -67,13 +70,14 @@
 
 .volunteer{
     height: 35vw;
-    width: 48vw;
+    padding: 1rem;
+    /* width: 48vw; */
     margin: 0.9rem;
     display: flex;
     flex-direction: column;
-    border: 2px solid var(--repledge-lightGreen);
     border-radius: 1rem;
     background-color: var(--repledge-lightGreenBackground);
+    box-shadow: 0 0 10px 4px rgb(0 0 0 / 5%);
 }
 
 .volunteer>img{
@@ -83,8 +87,8 @@
 }
 
 .volunteer>p{
-    color: white;
-    font-size: 8vw;
+    color: var(--repledge-darkerGrey);
+    font-size: 1.5rem;
     font-family: 'Times New Roman', Times, serif;
     margin-top: auto;
     margin-bottom: auto;
@@ -95,25 +99,77 @@
     background-color: var(--repledge-lightGreen);
 }
 
+.host{
+    height: 35vw;
+    padding: 1rem;
+    /* width: 48vw; */
+    margin: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    background-color: var(--repledge-lightGreenBackground);
+    box-shadow: 0 0 10px 4px rgb(0 0 0 / 5%);
+}
+
+.host>img{
+    margin: 0.5rem;
+    height: 65%;
+    width: 100%;
+}
+
+.host>p{
+    color: var(--repledge-darkerGrey);
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.host:hover{
+    cursor: pointer;
+    background-color: var(--repledge-lightGreen);
+}
+
 
 @media(min-width:40em){
+
+    .donate_n_volunteer{
+        display: flex;
+        justify-content: space-around;
+    }
+
     .YourDonation>p{
         font-size: 4rem;
     }
 
     .donate{
-        height: 25vw;
+        height: 20vw;
+        width: 31vw;
     }
 
     .donate>p{
-        font-size: 4rem;
+        font-size: 2rem;
     }
 
     .volunteer{
-        height: 25vw;
+        width: 31vw;
+        height: 20vw;
     }
 
     .volunteer>p{
-        font-size: 4rem;
+        font-size: 2rem;
     }
+
+    .host{
+        width: 31vw;
+        height: 20vw;
+    }
+
+    .host>p{
+        font-size: 2rem;
+    }
+
+
+
+    
 }

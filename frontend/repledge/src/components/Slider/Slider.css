@@ -6,23 +6,27 @@
     flex-direction: column;
     margin-left: 10px;
     margin-right: 10px;
-    border: 2px solid var(--repledge-lightGreen);
-    border-radius: 0.75rem;
+    /* border: 2px solid var(--repledge-lightGreen); */
+    border-radius: 0.25rem;
+    box-shadow: 0 0 5px rgb(0 0 0 / 25%);
+    justify-content: space-around;
+    padding-bottom: 0.5rem;
 }
 
 .imageView>img{
     width: 100%;
-    border-top-left-radius: 0.75rem;
-    border-top-right-radius: 0.75rem;
+    
 }
 
 .topic{
     display: flex;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-    font-size: 1rem;
+    font-size: 0.7rem;
+    color: var(--repledge-darkerGrey);
     font-weight: bolder;
     align-items: center;
+    margin-bottom: 0.75rem;
 }
 
 .info{
@@ -56,14 +60,15 @@
 }
 
 .volunteerButton{
-    background-color: var(--repledge-lightGreen);
-    justify-content: space-between;
-    color: white;
+    background-color:  var(--repledge-primaryRed);
+    color:white;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-    padding: 0.3rem;
+    padding: 0.75rem 0rem;
     margin-bottom: 1rem;
-    border-radius: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    border: none;
 }
 
 @media(min-width:40em){
@@ -73,6 +78,6 @@
     }
 
     .topic{
-        font-size: 2vw;
+        font-size: 1.5rem;
     }
 }
