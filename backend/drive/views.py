@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 # serialization imports
 from django.core import serializers
-from .serializers import donateSerializer
+from .serializers import driveSerializer
 
 # rest_framework imports
 from rest_framework.renderers import JSONRenderer
@@ -15,21 +15,18 @@ from rest_framework import status
 
 import json
 
-from .models import donate
+from .models import drive
 # Create your views here.
 
 @api_view(["GET","POST"])
 def index(request):
     if request.method == 'GET':
-        serializer1 = donateSerializer(donate.objects.all(), many=True)
+        serializer1 = driveSerializer(drive.objects.all(), many=True)
         return Response(serializer1.data)
 
     elif request.method == 'POST':
-        serializer1 = donateSerializer(data=request.data)
+        serializer1 = driveSerializer(data=request.data)
         if serializer1.is_valid():
-            serializer1.validated_data['location_link'] = f"https://www.google.com/maps/place/{serializer1.validated_data['location']}"
-            serializer1.validated_data['location_link']=serializer1.validated_data['location_link'].replace(' ','%')
-            # serializer1.objects.location_link = f"https://www.google.com/maps/place/{serializer1.objects.location}"
             serializer1.save()
 
             return Response(serializer1.data, status=status.HTTP_201_CREATED)
@@ -39,29 +36,38 @@ def index(request):
 @api_view(["GET","PUT","DELETE"])
 def details(request, pk):
     try: 
-        donation = donate.objects.get(pk=pk)
+        drive1 = drive.objects.get(pk=pk)
 
-    except donate.DoesNotExist:
+    except drive.DoesNotExist:
         return HttpResponse(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = donateSerializer(donation)
+        serializer = driveSerializer(drive1)
         return Response(serializer.data) 
     
     elif request.method == 'PUT': 
-        serializer = donateSerializer(donation, data=request.data)
+        serializer = driveSerializer(drive1, data=request.data)
 
         if serializer.is_valid():
-            serializer.validated_data['location_link'] = f"https://www.google.com/maps/place/{serializer.validated_data['location']}"
-            serializer.validated_data['location_link']=serializer.validated_data['location_link'].replace(' ','%')
             serializer.save()
 
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE': 
-        donation.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        drive1.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT) 
 
-def home(request):
-    return HttpResponse("Api for repledge")
+@api_view(["GET"])
+def filter(request,loc):
+
+    if request.method == 'GET':
+
+        try:
+            drive1 =drive.objects.filter(location=loc)
+
+            serializer= driveSerializer(drive1, many=True)
+            return Response(serializer.data,status=200)
+
+        except: 
+            return Response("something went wrong",status=400)
