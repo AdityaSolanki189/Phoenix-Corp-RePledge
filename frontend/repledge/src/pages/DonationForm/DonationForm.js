@@ -3,7 +3,8 @@ import "./DonationForm.css"
 import {useContext, useState} from "react";
 import TextField from "@mui/material/TextField";
 import {InputLabel, Select, MenuItem,Button} from "@mui/material";
-import {margin} from "@mui/system";
+import axios from "axios"
+import Loader from "../../components/Loader";
 
 export default function DonationForm() {
 
@@ -13,8 +14,33 @@ export default function DonationForm() {
     const [category,
         setCategory] = useState("");
 
+        const [loadingMessage,
+            setLoadingMessage] = useState("");
+
+            const [loader,
+                setLoader] = useState(false);
+
     function onChangeSelect(event) {
         setCategory(event.target.value)
+    }
+
+
+    async function postData(){
+        try{
+
+            setLoadingMessage("Posting your donation..")
+            console.log("posting")
+            const data=field;
+            const dataWithCategory={...data,category:category};
+            console.log(dataWithCategory)
+            const response=await axios.post("https://rocky-ocean-64241.herokuapp.com/donate/",dataWithCategory)
+            setLoader(false)
+            setLoadingMessage("")
+            console.log(response.data)
+        }catch(err){
+            console.log(err)
+            setLoader(false)
+        }
     }
 
     function onChangeHandler(event, {type}) {
@@ -75,6 +101,8 @@ export default function DonationForm() {
     }
 
     return <div className="donationform-holder">
+
+     {loader?<Loader loadingMessage={loadingMessage}></Loader>:<div></div>} 
 
         <div className="donationform-image-parent">
             <img class="donationform-image" src={donate}></img>
@@ -208,7 +236,11 @@ export default function DonationForm() {
 
             </div>
 
-            <Button sx={{backgroundColor:"#1c626e"}} variant="contained">Donate</Button>
+            <Button onClick={()=>{
+                postData();
+                setLoader(true)
+                
+                }} sx={{backgroundColor:"#1c626e"}} variant="contained">Donate</Button>
 
         </div>
 
