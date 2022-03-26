@@ -1,0 +1,36 @@
+@import url("../../index.css");
+
+
+.YourDonation{
+    height: 25vh;
+    margin: 0.9rem;
+    display: flex;
+    border: 2px solid var(--repledge-lightGreen);
+    border-radius: 2rem;
+    background-color: var(--repledge-lightGreenBackground);
+}
+
+.YourDonation>img{
+    margin: 0.5rem;
+    height: 90%;
+    width: 50vw;
+}
+
+.YourDonation>p{
+    color: white;
+    font-size: 10vw;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.YourDonation:hover{
+    cursor: pointer;
+    background-color: var(--repledge-lightGreen);
+}
+
+@media(min-width:40em){
+    .YourDonation>p{
+        font-size: 6rem;
+    }
+}

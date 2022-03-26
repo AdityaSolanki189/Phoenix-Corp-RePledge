@@ -4,7 +4,7 @@ import './HeaderSignedIn.css'
 
 function HeaderSignedIn() {
     return (
-        <div className='main'>
+        <div className='holder'>
 
             <div className="logo">
                 Repledge

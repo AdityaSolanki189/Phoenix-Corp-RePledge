@@ -1,0 +1,44 @@
+@import url("../../index.css");
+
+.holder{
+    height: 8vh;
+    background-color: var(--repledge-white);
+    box-shadow: -1px 2px 18px #afeafc;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    justify-content: center;
+}
+
+.logo{
+    color: var(--repledge-darkGreen);
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+.userIcon{
+    position: absolute;
+    right: 1rem;
+}
+.userIcon>span{
+    font-size: 2.5rem;
+    color: var(--repledge-lightGreenBackground);
+}
+
+.userIcon>span:hover{
+    cursor: pointer;
+    color: var(--repledge-lightGreen);
+}
+
+
+@media(min-width:40em){
+
+    .holder{
+        height: 10vh;
+    }
+    
+
+}
