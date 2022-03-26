@@ -2,6 +2,8 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import './LandingPage.css';
 import banner from '../../resources/plant_banner.svg';
+import books from '../../resources/books.svg';
+import kid from '../../resources/kid.svg';
 
 export default function LandingPage() {
 
@@ -10,7 +12,7 @@ export default function LandingPage() {
             <Header/>
             <div className='banner-parent'>
                 <div className='banner'>
-                    <img src={banner}/>
+                    <img src={kid}/>
 
                 </div>
                 <div className='whyUs'>
