@@ -26,6 +26,7 @@ def index(request):
         serializer1 = donateSerializer(data=request.data)
         if serializer1.is_valid():
             serializer1.validated_data['location_link'] = f"https://www.google.com/maps/place/{serializer1.validated_data['location']}"
+            serializer1.validated_data['location_link']=serializer1.validated_data['location_link'].replace(' ','%')
             # serializer1.objects.location_link = f"https://www.google.com/maps/place/{serializer1.objects.location}"
             serializer1.save()
 
