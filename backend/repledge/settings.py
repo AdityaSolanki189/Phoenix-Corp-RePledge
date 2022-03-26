@@ -27,9 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['rocky-ocean-64241.herokuapp.com','127.0.0.1']
 
-
-
-
 # Application definition
 
 INSTALLED_APPS = [
