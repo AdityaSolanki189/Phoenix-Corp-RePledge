@@ -1,7 +1,7 @@
-import Footer from './Footer';
-import Header from './Header';
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
 import './LandingPage.css';
-import banner from './plant_banner.svg';
+import banner from '../../resources/plant_banner.svg';
 
 export default function LandingPage() {
 
