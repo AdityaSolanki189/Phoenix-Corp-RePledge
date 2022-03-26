@@ -193,7 +193,7 @@ export default function DonationForm() {
                 }}
                     onChange=
                     { (event) => onChangeHandler(event, {type: "APARTMENT"}) }/>
-s
+
                 <TextField
                     required={true}
                     id="outlined"
