@@ -1,0 +1,77 @@
+@import url("../../index.css");
+
+.slider{
+    display: flex;
+    min-width: 10rem;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 2px solid var(--repledge-lightGreen);
+    border-radius: 0.75rem;
+}
+
+.imageView>img{
+    width: 100%;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+}
+
+.topic{
+    display: flex;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    font-weight: bolder;
+    align-items: center;
+}
+
+.info{
+    display: flex;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.info>img{
+    border-radius: 10rem;
+    height: 2rem;
+    border: 1px solid var(--repledge-lightGreen);
+}
+
+.info>span{
+    margin-left: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: medium;
+}
+
+.location{
+    display: flex;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.location>span{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.volunteerButton{
+    background-color: var(--repledge-lightGreen);
+    color: white;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 0.3rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+}
+
+@media(min-width:40em){
+
+    .slider{
+        min-width: 23vw;
+    }
+
+    .topic{
+        font-size: 2vw;
+    }
+}
