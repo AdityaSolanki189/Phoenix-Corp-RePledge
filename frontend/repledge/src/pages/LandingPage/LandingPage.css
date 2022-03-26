@@ -1,0 +1,53 @@
+@import url("../../index.css");
+
+.banner{
+    margin: 1rem 0rem;
+    /* border: 2px solid black; */
+}
+.banner>img{
+    width: 80%;
+    box-shadow: none
+    
+}
+
+.whyUs>span{
+    font-size: 2rem;
+    color: var(--repledge-lightGreen)
+}
+
+.whyUs>p{
+    color: var(--repledge-primaryGreen);
+    margin: 1rem;
+}
+
+
+
+@media(min-width:40em){
+
+    .banner-parent{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .banner{
+        height: 50vh;
+        flex:6 3
+    }
+    
+    .banner>img{
+        /* width: 100%; */
+        height: 100%;
+        box-shadow: -20px 0px 18px #c1f1ff;
+    }
+
+    .whyUs{
+        flex:3;
+        margin-top: 3rem;
+        margin-right: 5rem;
+    }
+
+  
+
+  
+
+}

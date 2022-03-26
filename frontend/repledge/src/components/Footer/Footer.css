@@ -1,0 +1,55 @@
+@import url("../../index.css");
+.footer {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    background-color: var(--repledge-primaryGreen);
+    border-radius: 0.5rem 0.5rem 0 0;
+    color: var(--repledge-white);
+    text-align: center;
+    padding: 0.75rem;
+}
+
+.footer-links {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-light-gray);
+}
+
+.footer-links i {
+    color: var(--color-light-gray);
+    transition: all 0.2s ease-in-out;
+}
+
+.footer-links i:hover {
+    color: var(--color-barcelona-red);
+}
+
+.footer-holder{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+   
+}
+
+
+
+@media(min-width:40em){
+
+   
+
+    .footer-holder{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+       
+    }
+
+  
+
+}

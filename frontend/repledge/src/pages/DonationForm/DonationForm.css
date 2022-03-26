@@ -1,0 +1,46 @@
+@import url("../../index.css");
+
+.donationform-holder {
+    }
+
+.donationform-tagline {
+    color: var(--repledge-darkGreen);
+}
+
+.donationform-image-parent {
+    margin: 1rem 0;
+
+}
+.donationform-image-parent > img {
+    width: 80%;
+    box-shadow: none;
+}
+
+.card {
+    box-shadow: 0 0 5px rgb(0 0 0 / 25%);
+    margin: 1rem 1rem;
+    padding: 1rem;
+
+}
+
+.donationform-inputblock {
+    margin: 1rem;
+}
+@media(min-width:40em) {
+
+    .donationform-image-parent {
+        height: 50vh;
+        flex: 6 3;
+    }
+
+    .donationform-image-parent > img {
+
+        height: 100%;
+
+    }
+
+    .card{
+        margin: 1rem auto;
+    }
+
+}
