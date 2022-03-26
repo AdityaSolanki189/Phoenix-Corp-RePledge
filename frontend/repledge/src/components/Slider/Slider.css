@@ -57,6 +57,7 @@
 
 .volunteerButton{
     background-color: var(--repledge-lightGreen);
+    justify-content: space-between;
     color: white;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
