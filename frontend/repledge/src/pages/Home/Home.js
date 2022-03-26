@@ -5,6 +5,7 @@ import donationImg from '../../resources/yourDonationsImg.svg'
 import donate from '../../resources/donate.svg'
 import volunteer from '../../resources/volunteer.svg'
 import Footer from '../../components/Footer/Footer'
+import { useNavigate } from 'react-router-dom'
 import Slider from '../../components/Slider/Slider'
 
 function Home() {
@@ -52,6 +53,9 @@ function Home() {
   }
 
 
+  const navigate=useNavigate();
+
+
   return (
     <div className='main'>
       <HeaderSignedIn />
@@ -64,7 +68,11 @@ function Home() {
       </div>
 
       <div className="donate_n_volunteer">
-        <div className="donate">
+        <div onClick={()=>{
+
+          navigate("/donate")
+
+        }} className="donate">
           <img src={donate} />
           <p>Donate</p>
         </div>
