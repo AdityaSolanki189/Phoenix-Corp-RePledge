@@ -6,40 +6,42 @@ import donate from '../../resources/donate.svg'
 import volunteer from '../../resources/volunteer.svg'
 import Footer from '../../components/Footer/Footer'
 import { useNavigate } from 'react-router-dom'
+import host from "../../resources/host.svg"
 import Slider from '../../components/Slider/Slider'
 
-function Home() {
+export const sliderData = [
+  {
+    image: "https://media.istockphoto.com/photos/professional-doctor-preparing-patient-for-procedure-picture-id627290560?k=20&m=627290560&s=612x612&w=0&h=LAe2Ou94kCGRju_7KDbAwZBSw1yH7EGLRRNKSOvFx2c=",
+    topic: "Blood Donation Camp",
+    userImage: "https://lh3.googleusercontent.com/a-/AOh14GgKi3wA77XAADe3-D4CtBg06TYVutdtGh2xmaMUjA=s48",
+    userName: "Aditya Nair",
+    location: "Kalyan, Mumbai"
+  },
+  {
+    image: "https://media.istockphoto.com/photos/woman-donating-unwanted-items-to-charity-shop-picture-id487227763?k=20&m=487227763&s=612x612&w=0&h=aeVCR-IlknPeImzqqlPi1R7yOVsdC5cdh7DR6vkas_A=",
+    topic: "Books Donation Camp",
+    userImage: "https://lh3.googleusercontent.com/ogw/ADea4I5oLFrbMfbGcw1mFvbfhM-_DfiRdiirmKw-eipRKw=s32-c-mo",
+    userName: "Anurag Patil",
+    location: "Daman, Daman & Diu"
+  },
+  {
+    image: "https://media.istockphoto.com/photos/volunteers-planting-a-tree-picture-id1130655067?k=20&m=1130655067&s=612x612&w=0&h=RAzFqA78Vpge5nBtFY26BYK0BoDOJP6ZANhK-nCQPLY=",
+    topic: "Tree Plantation",
+    userImage: "",
+    userName: "Aditya Solanki",
+    location: "Thane, Mumbai"
+  },
+  {
+    image: "https://media.istockphoto.com/photos/generous-people-helping-to-poor-people-picture-id1139776668?k=20&m=1139776668&s=612x612&w=0&h=9ASOaytjDWhH5y6flg4g7Hbm0It_V7PVeoO_428XeDk=",
+    topic: "Food Donation",
+    userImage: "",
+    userName: "Prem Jha",
+    location: "Kalyan, Mumbai"
+  }
+];
 
-  var sliderData = [
-    {
-      image: "https://media.istockphoto.com/photos/professional-doctor-preparing-patient-for-procedure-picture-id627290560?k=20&m=627290560&s=612x612&w=0&h=LAe2Ou94kCGRju_7KDbAwZBSw1yH7EGLRRNKSOvFx2c=",
-      topic: "Blood Donation Camp",
-      userImage: "https://lh3.googleusercontent.com/a-/AOh14GgKi3wA77XAADe3-D4CtBg06TYVutdtGh2xmaMUjA=s48",
-      userName: "Aditya Nair",
-      location: "Kalyan, Mumbai"
-    },
-    {
-      image: "https://media.istockphoto.com/photos/woman-donating-unwanted-items-to-charity-shop-picture-id487227763?k=20&m=487227763&s=612x612&w=0&h=aeVCR-IlknPeImzqqlPi1R7yOVsdC5cdh7DR6vkas_A=",
-      topic: "Books Donation Camp",
-      userImage: "https://lh3.googleusercontent.com/ogw/ADea4I5oLFrbMfbGcw1mFvbfhM-_DfiRdiirmKw-eipRKw=s32-c-mo",
-      userName: "Anurag Patil",
-      location: "Daman, Daman & Diu"
-    },
-    {
-      image: "https://media.istockphoto.com/photos/volunteers-planting-a-tree-picture-id1130655067?k=20&m=1130655067&s=612x612&w=0&h=RAzFqA78Vpge5nBtFY26BYK0BoDOJP6ZANhK-nCQPLY=",
-      topic: "Tree Plantation",
-      userImage: "",
-      userName: "Aditya Solanki",
-      location: "Thane, Mumbai"
-    },
-    {
-      image: "https://media.istockphoto.com/photos/generous-people-helping-to-poor-people-picture-id1139776668?k=20&m=1139776668&s=612x612&w=0&h=9ASOaytjDWhH5y6flg4g7Hbm0It_V7PVeoO_428XeDk=",
-      topic: "Food Donation",
-      userImage: "",
-      userName: "Prem Jha",
-      location: "Kalyan, Mumbai"
-    }
-  ];
+
+function Home() {
 
 
   const scroller = useRef();
@@ -60,12 +62,7 @@ function Home() {
     <div className='main'>
       <HeaderSignedIn />
 
-      <div className='YourDonation'>
-        <img src={donationImg} />
-        {/* <p><b>{myDonations.length ? 'Your Donations':'Make your First Donation'}</b></p> */}
-        <p>Your Donations</p>
-
-      </div>
+      
 
       <div className="donate_n_volunteer">
         <div onClick={()=>{
@@ -73,15 +70,28 @@ function Home() {
           navigate("/donate")
 
         }} className="donate">
-          <img src={donate} />
+          <img src={donationImg} />
           <p>Donate</p>
         </div>
 
-        <div className="volunteer">
+        <div onClick={()=>{
+
+            navigate("/volunteer")
+
+          }} className="volunteer">
           <img src={volunteer} />
           <p>Volunteer</p>
         </div>
+
+        <div className="host">
+          <img src={host}/>
+          <p>Host Drive</p>
+        </div>
+        
+        
       </div>
+
+      <h1 style={{marginBottom:"-1rem",color:"#212529"}}>Upcoming Drives</h1>
 
       <div
         className="playlist-slot-desktop"
@@ -111,7 +121,8 @@ function Home() {
             flexDirection: "row",
             overflowX: "hidden",
             scrollBehavior: "smooth",
-            border: "2px #D1D9D9 solid",
+            padding:"1rem"
+            // border: "2px #D1D9D9 solid",
           }}
         >
           {" "}
