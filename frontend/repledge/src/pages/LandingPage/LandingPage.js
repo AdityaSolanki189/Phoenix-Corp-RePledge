@@ -16,7 +16,7 @@ export default function LandingPage() {
 
                 </div>
                 <div className='whyUs'>
-                    <span >Why Us?</span>
+                    <span style={{ }}>Why Us?</span>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus delectus
                         odio, necessitatibus corporis quos, dolores perspiciatis ut ab nobis magni
                         deleniti id quasi beatae obcaecati hic perferendis quis illo qui ex dolor

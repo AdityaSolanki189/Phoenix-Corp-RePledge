@@ -6,6 +6,7 @@ import donate from '../../resources/donate.svg'
 import volunteer from '../../resources/volunteer.svg'
 import Footer from '../../components/Footer/Footer'
 import { useNavigate } from 'react-router-dom'
+import host from "../../resources/host.svg"
 
 function Home() {
 
@@ -16,12 +17,7 @@ const navigate=useNavigate();
     <div className='main'>
       <HeaderSignedIn />
 
-      <div className='YourDonation'>
-        <img src={donationImg} />
-        {/* <p><b>{myDonations.length ? 'Your Donations':'Make your First Donation'}</b></p> */}
-        <p>Your Donations</p>
-
-      </div>
+      
 
       <div className="donate_n_volunteer">
         <div onClick={()=>{
@@ -29,7 +25,7 @@ const navigate=useNavigate();
           navigate("/donate")
 
         }} className="donate">
-          <img src={donate} />
+          <img src={donationImg} />
           <p>Donate</p>
         </div>
 
@@ -37,10 +33,13 @@ const navigate=useNavigate();
           <img src={volunteer}/>
           <p>Volunteer</p>
         </div>
-        
-        <div className="hostDrive">
-          
+
+        <div className="host">
+          <img src={host}/>
+          <p>Host Drive</p>
         </div>
+        
+        
       </div>
         {/* <Footer/> */}
 

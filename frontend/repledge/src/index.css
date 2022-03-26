@@ -1,9 +1,18 @@
 :root {
-  --repledge-white: #fcfcfc;
+  /* --repledge-white: #fcfcfc;
   --repledge-primaryGreen: #123c49;
   --repledge-darkGreen:#1c626e;
   --repledge-lightGreen:#248893;
-  --repledge-lightGreenBackground:#30aeb9;
+  --repledge-lightGreenBackground:#30aeb9; */
+
+  --repledge-primaryRed:#C3023A;
+  --repledge-lightRed:#fcc5c5;
+  --repledge-darkBlue:#181733;
+  --repledge-darkerGrey:#212529;
+  --repledge-lightRedBackground:#fff0f0;
+
+
+
 }
 
 body {
