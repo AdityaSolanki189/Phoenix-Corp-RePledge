@@ -32,7 +32,7 @@ export default function DonationForm() {
             const data=field;
             const dataWithCategory={...data,category:category};
             console.log(dataWithCategory)
-            const response=await axios.post("https://rocky-ocean-64241.herokuapp.com/donate/",dataWithCategory)
+            const response=await axios.post("https://fathomless-savannah-19987.herokuapp.com/donate/",dataWithCategory)
             setLoader(false)
             setLoadingMessage("")
             console.log(response.data)
