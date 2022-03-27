@@ -21,10 +21,12 @@ function App() {
                 <Route path="/volunteer" element={< Volunteer > </Volunteer>}></Route>
                 <Route path="/signup" element={<SignUp></SignUp>}></Route>
                 <Route path="/login" element={<Login></Login>}></Route>
-                <PrivateRoute 
+
+                {/* <PrivateRoute 
                 path="/home" 
                 element={<Home/>}>
-            </PrivateRoute>
+            </PrivateRoute> */}
+            
             </Routes>
         </div>
     );
