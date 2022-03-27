@@ -10,6 +10,9 @@ import HostDriveForm from './pages/HostDriveForm/HostDriveForm';
 import SignUp from './pages/Signup/Signup';
 import Login from './pages/Login/Login';
 import PrivateRoute from "./routes/PrivateRoute"
+import MyDrives from './pages/MyDrives/MyDrives';
+import MyDonations from './pages/MyDonations/MyDonations';
+import VolunteeredEarlier from './pages/VolunteeredEarlier/VolunteeredEarlier';
 
 
 function App() {
@@ -23,13 +26,13 @@ function App() {
         <Route path="/profile" element={<ProfilePage/>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
-        <PrivateRoute 
+        {/* <PrivateRoute 
                 path="/home" 
                 element={<Home/>}>
-            </PrivateRoute>
-        {/* <Route path="/profile" element={<ProfilePage/>}></Route>
-        <Route path="/profile" element={<ProfilePage/>}></Route>
-        <Route path="/profile" element={<ProfilePage/>}></Route> */}
+            </PrivateRoute> */}
+        <Route path="/my_drives" element={<MyDrives/>}></Route>
+        <Route path="/my_donations" element={<MyDonations/>}></Route>
+        <Route path="/Volunteered" element={<VolunteeredEarlier/>}></Route>
       </Routes>
     </div>
   );
