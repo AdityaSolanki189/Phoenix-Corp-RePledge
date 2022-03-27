@@ -4,8 +4,11 @@ import './LandingPage.css';
 import banner from '../../resources/plant_banner.svg';
 import books from '../../resources/books.svg';
 import kid from '../../resources/kid.svg';
+import { useNavigate } from 'react-router-dom';
 
 export default function LandingPage() {
+
+
 
     return (
         <div>
