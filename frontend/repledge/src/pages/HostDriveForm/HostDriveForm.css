@@ -1,0 +1,7 @@
+.mainParent{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 8vw;
+    margin-top: 2rem;
+
+}

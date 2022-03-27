@@ -81,13 +81,15 @@ export default function HostDriveForm() {
         {
             loader?<Loader loadingMessage={loadingMessage}></Loader>:<div></div>
         }
-
-        <div className="hostform-image-parent">
-            <img class="hostform-image" src={hostdrive}></img>
-        </div>
         <h1 className="hostform-tagline">
             Host a Drive for a Greater Good!
         </h1>
+
+        <div className="mainParent">
+        <div className="hostform-image-parent">
+            <img class="hostform-image" src={hostdrive}></img>
+        </div>
+        
 
         <div className="card">
 
@@ -175,5 +177,8 @@ export default function HostDriveForm() {
                 
                 }} sx={{backgroundColor:"#1c626e"}} variant="contained">Host</Button>
         </div>
+        </div>
+
+        
     </div>
 };

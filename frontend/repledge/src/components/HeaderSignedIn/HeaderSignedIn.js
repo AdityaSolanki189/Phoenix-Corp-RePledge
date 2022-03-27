@@ -1,9 +1,12 @@
 import React from 'react'
 // import PersonIcon from './user_icon.png';
 import './HeaderSignedIn.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 function HeaderSignedIn() {
+
+    const navigate = useNavigate();
     return (
 
         <header>
@@ -30,20 +33,15 @@ function HeaderSignedIn() {
 
                 <div style={{marginLeft:"auto"}} class="nav-links">
                     <ul class="nav-link-list" id="nav-link-list" data-visible="false">
-                        <a href="/">
-                            <li class="nav-link-list-item">My Drives</li>
-                        </a>
 
-                        <a href="/docs.html">
-                            <li class="nav-link-list-item">My Donations</li>
-                        </a>
+                        <li onClick={()=>{navigate("/my_drives")}} class="nav-link-list-item">My Drives</li>
+                        
+                        <li onClick={()=>{navigate("/my_donations")}} class="nav-link-list-item">My Donations</li>
 
-                        <a href="/docs.html">
-                            <li class="nav-link-list-item">Volunteered</li>
-                        </a>
+                        <li onClick={()=>{navigate("/Volunteered")}} class="nav-link-list-item">Volunteered</li>
 
                         <a>
-                        <span style={{fontSize:"2.25rem",marginRight:"2rem"}} class="material-icons">
+                        <span onClick={()=>{navigate("/profile")}} style={{fontSize:"2.25rem",marginRight:"2rem", cursor:"pointer"}} class="material-icons">
                                 account_circle
                             </span>
                         </a>
