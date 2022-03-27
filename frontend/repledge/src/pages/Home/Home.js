@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import './Home.css'
 import HeaderSignedIn from '../../components/HeaderSignedIn/HeaderSignedIn'
 import donationImg from '../../resources/yourDonationsImg.svg'
@@ -134,6 +134,19 @@ function Home() {
   function rightScroll() {
     scroller.current.scrollLeft += 400;
   }
+
+//   const {
+//     signUp,
+//     error,
+//     loading,
+//     setError,
+//     setLoading,
+//     currentUser
+// } = useContext(AuthContext);
+
+// useEffect(()=>{
+//   currentUser?navigate('/home'):navigate('/login')
+// },[])
 
 
   const navigate=useNavigate();

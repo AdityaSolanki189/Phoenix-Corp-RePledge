@@ -24,7 +24,6 @@ export default function DonationForm() {
         setCategory(event.target.value)
     }
 
-
     async function postData(){
         try{
 
