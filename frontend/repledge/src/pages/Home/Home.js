@@ -43,7 +43,6 @@ export const sliderData = [
 
 function Home() {
 
-
   const scroller = useRef();
 
   function leftScroll() {
@@ -107,6 +106,7 @@ function Home() {
             padding: "0.5rem",
             backgroundColor: "white",
             border: "none",
+            cursor: "pointer"
           }}
         ><span class="material-icons">
             arrow_back_ios
@@ -117,7 +117,7 @@ function Home() {
           style={{
             margin: "2rem auto" ,
             display: "flex",
-            width: "70vw",
+            width: "72vw",
             flexDirection: "row",
             overflowX: "hidden",
             scrollBehavior: "smooth",
@@ -144,6 +144,7 @@ function Home() {
             padding: "0.5rem",
             backgroundColor: "white",
             border: "1px white solid",
+            cursor: "pointer"
           }}
         >
           <span class="material-icons">
