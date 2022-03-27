@@ -12,6 +12,7 @@ class donate(models.Model):
     category = models.CharField(max_length=200)
     pickup = models.DateField(auto_now_add=False)
     ngo = models.CharField(max_length=300,blank=True)
+    room_no = models.CharField(max_length=200,default="")
     location = models.CharField(max_length=500) 
     location_link = models.URLField(max_length=500,blank=True)
     def __str__(self) -> str:

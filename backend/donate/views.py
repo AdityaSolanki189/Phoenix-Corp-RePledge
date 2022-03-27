@@ -79,4 +79,18 @@ def tracking(request):
 
             return Response(serializer1.data, status=status.HTTP_201_CREATED)
 
-        return Response(serializer1.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer1.errors, status=status.HTTP_400_BAD_REQUEST) 
+
+@api_view(["GET"])
+def filter(request,name):
+
+    if request.method == 'GET':
+
+        try:
+            donation =donate.objects.filter(name=name)
+
+            serializer= donateSerializer(donation, many=True)
+            return Response(serializer.data,status=200)
+
+        except: 
+            return Response("something went wrong",status=400) 

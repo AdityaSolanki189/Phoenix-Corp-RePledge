@@ -8,3 +8,5 @@ class drive(models.Model):
     description = models.CharField(max_length=1000)
     number= models.CharField(max_length=10,default="")
     ngo = models.CharField(max_length=300,blank=True)
+    image = models.URLField(max_length=500,blank=True)
+    prof_image = models.URLField(max_length=500,blank=True)
