@@ -7,7 +7,7 @@ class tracker_admin_inline(admin.StackedInline):
     model=tracker
 @admin.register(donate)
 class donateAdmin(admin.ModelAdmin):
-    list_display=["name","quantity"]
+    list_display=["name","quantity","item_name"]
     inlines = [tracker_admin_inline]
 
 admin.site.register(tracker)

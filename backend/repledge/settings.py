@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-kwmp@8_mbh*zsl087y1o6f6@2aah%_%q==t*5k29pc0t%jq!gx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['rocky-ocean-64241.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['fathomless-savannah-19987.herokuapp.com','127.0.0.1']
 
 # Application definition
 
