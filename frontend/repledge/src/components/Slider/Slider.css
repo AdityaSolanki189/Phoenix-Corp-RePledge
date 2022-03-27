@@ -15,7 +15,8 @@
 
 .imageView>img{
     width: 100%;
-    
+    border-top-right-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
 }
 
 .topic{
@@ -69,6 +70,10 @@
     font-size: 1rem;
     border-radius: 0.25rem;
     border: none;
+}
+
+.volunteerButton:hover{
+    cursor: pointer;
 }
 
 @media(min-width:40em){

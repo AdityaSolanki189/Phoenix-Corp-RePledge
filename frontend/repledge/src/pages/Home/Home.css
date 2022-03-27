@@ -26,6 +26,8 @@
 
 .YourDonation:hover{
     cursor: pointer;
+    transform: scale(1.01);
+
     /* background-color: var(--repledge-lightGreen); */
 }
 
@@ -63,10 +65,11 @@
 }
 
 .donate:hover{
-    cursor: pointer;
-    background-color: var(--repledge-lightGreen);
-
+    cursor: pointer;    
+    transform: scale(1.02);
+    box-shadow: 0 0 9px 10px rgb(0 0 0 / 5%);
 }
+
 
 .volunteer{
     height: 35vw;
@@ -76,7 +79,6 @@
     display: flex;
     flex-direction: column;
     border-radius: 1rem;
-    background-color: var(--repledge-lightGreenBackground);
     box-shadow: 0 0 10px 4px rgb(0 0 0 / 5%);
 }
 
@@ -95,8 +97,10 @@
 }
 
 .volunteer:hover{
-    cursor: pointer;
-    background-color: var(--repledge-lightGreen);
+    cursor: pointer;    
+    box-shadow: 0 0 9px 10px rgb(0 0 0 / 5%);
+    transform: scale(1.02);
+
 }
 
 .host{
@@ -127,7 +131,9 @@
 
 .host:hover{
     cursor: pointer;
-    background-color: var(--repledge-lightGreen);
+    transform: scale(1.02);
+    box-shadow: 0 0 9px 10px rgb(0 0 0 / 5%);
+
 }
 
 
