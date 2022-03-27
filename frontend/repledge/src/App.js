@@ -5,6 +5,8 @@ import Home from './pages/Home/Home';
 import {Routes, Route} from "react-router-dom";
 import DonationForm from './pages/DonationForm/DonationForm';
 import Volunteer from './pages/Volunteer/Volunteer';
+import VolunteerDetail from './pages/VolunteerDetail/VolunteerDetail';
+
 import HostDriveForm from './pages/HostDriveForm/HostDriveForm';
 import SignUp from './pages/Signup/Signup';
 import Login from './pages/Login/Login';
@@ -30,6 +32,7 @@ function App() {
             </Routes>
         </div>
     );
+
 }
 
 export default App;
