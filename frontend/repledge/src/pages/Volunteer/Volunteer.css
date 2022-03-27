@@ -1,4 +1,44 @@
 .grid{
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
+
+}
+
+.nayaCard{
+    display: flex;
+    width: 15rem;
+    height: 25rem;
+    margin: 1rem;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 0 5px rgb(0 0 0 / 25%);
+    border-radius: 0.25rem;
+    justify-content: space-between;
+    
+}
+
+.nayaCard:hover{
+    transform: scale(1.02);
+}
+
+.nayaCard>img{
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+.heading{
+    font-weight: bold;
+}
+
+.volunteerButton{
+    background-color:  var(--repledge-primaryRed);
+    color:white;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 0.75rem 0rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    border: none;
 }

@@ -6,6 +6,8 @@ import {Routes, Route} from "react-router-dom";
 import DonationForm from './pages/DonationForm/DonationForm';
 import Volunteer from './pages/Volunteer/Volunteer';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
+import VolunteerDetail from './pages/VolunteerDetail/VolunteerDetail';
+
 import HostDriveForm from './pages/HostDriveForm/HostDriveForm';
 import SignUp from './pages/Signup/Signup';
 import Login from './pages/Login/Login';
@@ -21,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage></LandingPage>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
+        <Route path="/host" element={< HostDriveForm > </HostDriveForm>}></Route>
         <Route path="/donate" element={<DonationForm></DonationForm>}></Route>
         <Route path="/volunteer" element={<Volunteer></Volunteer>}></Route>
         <Route path="/profile" element={<ProfilePage/>}></Route>
@@ -30,12 +33,14 @@ function App() {
                 path="/home" 
                 element={<Home/>}>
             </PrivateRoute> */}
+        <Route path="/drive/:id" element={<VolunteerDetail></VolunteerDetail>}></Route>
         <Route path="/my_drives" element={<MyDrives/>}></Route>
         <Route path="/my_donations" element={<MyDonations/>}></Route>
         <Route path="/Volunteered" element={<VolunteeredEarlier/>}></Route>
       </Routes>
     </div>
   );
+
 }
 
 export default App;
