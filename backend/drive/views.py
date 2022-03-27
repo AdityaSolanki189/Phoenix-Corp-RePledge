@@ -59,15 +59,13 @@ def details(request, pk):
         return Response(status=status.HTTP_204_NO_CONTENT) 
 
 @api_view(["GET"])
-def filter(request,loc):
-
+def filter(request,ngo):
     if request.method == 'GET':
-
         try:
-            drive1 =drive.objects.filter(location=loc)
+            drive1 =drive.objects.filter(ngo=ngo)
 
             serializer= driveSerializer(drive1, many=True)
-            return Response(serializer.data,status=200)
+            return Response(serializer.data,status=200) 
 
         except: 
             return Response("something went wrong",status=400) 

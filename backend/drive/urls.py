@@ -5,6 +5,6 @@ from . import views
 urlpatterns = [
     path('drive/', views.index, name='index'),
     path('drive/<int:pk>/',views.details, name="details"),
-    path('drive/filter/<loc>/',views.filter, name="filter")
+    path('drive/filter/<ngo>/',views.filter, name="filter")
 
 ]
