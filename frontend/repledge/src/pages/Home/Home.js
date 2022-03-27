@@ -176,7 +176,11 @@ function Home() {
           <p>Volunteer</p>
         </div>
 
-        <div className="host">
+        <div onClick={()=>{
+
+navigate("/host")
+
+}} className="host">
           <img src={host}/>
           <p>Host Drive</p>
         </div>

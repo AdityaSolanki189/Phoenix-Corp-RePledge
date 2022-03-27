@@ -4,10 +4,24 @@ import './ProfilePage.css';
 import TextField from "@mui/material/TextField";
 import Footer from '../../components/Footer/Footer';
 import { Button } from '@mui/material';
+import { signOut } from "firebase/auth";
+import {useNavigate} from 'react-router-dom'
+import {auth} from '../../config/Firebase'
 
 function ProfilePage() {
 
+    const navigate = useNavigate();
+
     const [field,setField] = useState({});
+    async function logout() {
+        try {
+            const response = signOut(auth);
+            navigate("/");
+            console.log(response);
+        } catch (err) {
+            console.log(err);
+        }
+    }
 
     function onChangeHandler(event, {type}) {
 
@@ -107,7 +121,7 @@ function ProfilePage() {
                         onChange=
                         { (event) => onChangeHandler(event, {type: "EMAIL"}) }/>
 
-                <Button>Log Out</Button>
+                <Button onClick={logout}>Log Out</Button>
             </div>
         </div>
         <Footer/>

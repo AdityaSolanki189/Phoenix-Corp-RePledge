@@ -33,5 +33,4 @@
 
 .secondHalf>button :hover{
     cursor: pointer;
-    background-color: var(--repledge-lightRed);
 }
