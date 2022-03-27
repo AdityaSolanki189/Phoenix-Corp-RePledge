@@ -1,7 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Slider.css'
 
-function Slider({image, topic, userImage, userName, location}) {
+function Slider({image, topic, userImage, userName, location,id}) {
+
+    const navigate=useNavigate();
 
   return (
     <div className='slider'>
@@ -24,7 +27,7 @@ location_on
             <p>{location}</p>
         </div>
 
-        <button className='volunteerButton'>Volunteer</button>
+        <button onClick={()=>{navigate(`/drive/${id}`)}} className='volunteerButton'>Volunteer</button>
 
     </div>
   )

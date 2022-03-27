@@ -1,18 +1,20 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import HeaderSignedIn from '../../components/HeaderSignedIn/HeaderSignedIn';
 import './ProfilePage.css';
 import TextField from "@mui/material/TextField";
 import Footer from '../../components/Footer/Footer';
-import { Button } from '@mui/material';
-import { signOut } from "firebase/auth";
+import {Button} from '@mui/material';
+import {signOut} from "firebase/auth";
 import {useNavigate} from 'react-router-dom'
 import {auth} from '../../config/Firebase'
+import {AuthContext} from '../../contexts/AuthProvider';
 
 function ProfilePage() {
 
     const navigate = useNavigate();
 
-    const [field,setField] = useState({});
+    const [field,
+        setField] = useState({});
     async function logout() {
         try {
             const response = signOut(auth);
@@ -25,31 +27,24 @@ function ProfilePage() {
 
     function onChangeHandler(event, {type}) {
 
-
         if (type === "NAME") {
             setField({
                 ...field,
                 name: event.target.value
             });
-        }
-        else if (type === "LOCATION") {
-
+        } else if (type === "LOCATION") {
 
             setField({
                 ...field,
                 location: event.target.value
             });
-        }
-        else if (type === "PHONE NUMBER") {
-
+        } else if (type === "PHONE NUMBER") {
 
             setField({
                 ...field,
                 location: event.target.value
             });
-        }
-        else if (type === "EMAIL") {
-
+        } else if (type === "EMAIL") {
 
             setField({
                 ...field,
@@ -58,30 +53,42 @@ function ProfilePage() {
         }
     }
 
-    const userImage = "https://image.shutterstock.com/image-photo/portrait-smiling-african-american-student-260nw-1194497215.jpg"
-  return (
-    <div className='profilePage'>
-        <HeaderSignedIn/>
-        <div className="mainContent">
-            <div className="firstHalf">
-                <img src={userImage} />
-                
-            </div>
-            <div className="secondHalf">
-            <TextField
+    const {
+        signUp,
+        error,
+        loading,
+        setError,
+        setLoading,
+        currentUser
+    } = useContext(AuthContext);
+
+    console.log(currentUser)
+
+    const userImage = "https://image.shutterstock.com/image-photo/portrait-smiling-african-american-stu" +
+            "dent-260nw-1194497215.jpg"
+
+    return (
+        <div className='profilePage'>
+            <HeaderSignedIn/>
+            <div className="mainContent">
+                <div className="firstHalf">
+                    <img src={userImage}/>
+
+                </div>
+                <div className="secondHalf">
+                    <TextField
                         required={true}
                         id="outlined"
-                        label="Anurag Patil"
+                        label={currentUser.displayName}
                         type="text"
                         sx={{
                         color: "#1c626e",
                         margin: "1rem",
                         width: "25vw"
-
                     }}
                         onChange=
                         { (event) => onChangeHandler(event, {type: "NAME"}) }/>
-                <TextField
+                    <TextField
                         required={true}
                         id="outlined"
                         label="7359102080"
@@ -93,7 +100,7 @@ function ProfilePage() {
                     }}
                         onChange=
                         { (event) => onChangeHandler(event, {type: "MOBILE NUMBER"}) }/>
-                <TextField
+                    <TextField
                         required={true}
                         id="outlined"
                         label="Daman, Daman & Diu"
@@ -102,31 +109,29 @@ function ProfilePage() {
                         color: "#1c626e",
                         margin: "1rem",
                         width: "25vw"
-
                     }}
                         onChange=
                         { (event) => onChangeHandler(event, {type: "LOCATION"}) }/>
-                
-                <TextField
+
+                    <TextField
                         required={true}
                         id="outlined"
-                        label="anuraggp2001@gmail.com"
+                        label={currentUser.email}
                         type="text"
                         sx={{
                         color: "#1c626e",
                         margin: "1rem",
                         width: "25vw"
-
                     }}
                         onChange=
                         { (event) => onChangeHandler(event, {type: "EMAIL"}) }/>
 
-                <Button onClick={logout}>Log Out</Button>
+                    <Button onClick={logout}>Log Out</Button>
+                </div>
             </div>
+            <Footer/>
         </div>
-        <Footer/>
-    </div>
-  )
+    )
 }
 
 export default ProfilePage
