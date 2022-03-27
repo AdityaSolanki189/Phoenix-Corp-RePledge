@@ -5,6 +5,8 @@ import Home from './pages/Home/Home';
 import {Routes, Route} from "react-router-dom";
 import DonationForm from './pages/DonationForm/DonationForm';
 import Volunteer from './pages/Volunteer/Volunteer';
+import VolunteerDetail from './pages/VolunteerDetail/VolunteerDetail';
+
 import HostDriveForm from './pages/HostDriveForm/HostDriveForm';
 import SignUp from './pages/Signup/Signup';
 import Login from './pages/Login/Login';
@@ -21,6 +23,7 @@ function App() {
                 <Route path="/volunteer" element={< Volunteer > </Volunteer>}></Route>
                 <Route path="/signup" element={<SignUp></SignUp>}></Route>
                 <Route path="/login" element={<Login></Login>}></Route>
+                <Route path="/drive/:id" element={<VolunteerDetail></VolunteerDetail>}></Route>
                 <PrivateRoute 
                 path="/home" 
                 element={<Home/>}>
@@ -28,6 +31,7 @@ function App() {
             </Routes>
         </div>
     );
+
 }
 
 export default App;
