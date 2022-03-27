@@ -147,9 +147,13 @@ function VolunteerDetail() {
                                 { (event) => onChangeHandler(event, {type: "hrs"}) }/>
                         </div>
 
+                        <button style={{padding:"1rem"}} className='volunteerButton'>Volunteer</button>
+
                     </div>
                 : <Loader></Loader>
 }
+
+
 
         </div>
     )

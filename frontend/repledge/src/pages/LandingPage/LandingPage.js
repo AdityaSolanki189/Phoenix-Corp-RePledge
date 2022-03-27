@@ -19,12 +19,14 @@ export default function LandingPage() {
 
                 </div>
                 <div className='whyUs'>
-                    <span style={{ }}>Why Us?</span>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus delectus
-                        odio, necessitatibus corporis quos, dolores perspiciatis ut ab nobis magni
-                        deleniti id quasi beatae obcaecati hic perferendis quis illo qui ex dolor
-                        veritatis libero! Perspiciatis, ut nisi quia porro quod in molestiae
-                        reprehenderit animi optio aut minus, minima quos. Nostrum.</p>
+                    <span style={{}}>Why Us?</span>
+                    <p> Users can donate material goods at their doorstep and our volunteers will
+                        collect it. Hence, making it easier for people to make donations.
+                        <br/>
+                         The donations drives can be setup by a host who can broadcast a message asking
+                        for volunteers.
+                        <br/>
+                         We can track the donations made by the users to keep the proof of work</p>
                 </div>
             </div>
 
