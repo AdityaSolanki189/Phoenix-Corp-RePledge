@@ -1,7 +1,9 @@
+import loaderanim from ".././resources/loader_anim.svg"
+
 export default function Loader({loadingMessage}){
     return <div
     style={{
-    backgroundColor: "rgba(0,0,0,0.5)",
+    // backgroundColor: "rgba(0,0,0,0.5)",
     position: "fixed",
     width: "100%",
     height: "100%",
@@ -10,7 +12,7 @@ export default function Loader({loadingMessage}){
     right: "0",
     bottom: "0"
 }}>
-    <div
+    {/* <div
         style={{
         backgroundColor:"black" ,
         position: "absolute",
@@ -22,6 +24,24 @@ export default function Loader({loadingMessage}){
         padding: "1rem 3rem"
     }}>{loadingMessage}
 
+    </div> */}
+
+    <div
+        style={{
+        backgroundColor:"black" ,
+        position: "absolute",
+        left: "50%",
+        color:"white",
+        top: "50%",
+        transform: "translate(-50%, -50%)",
+    }}>
+
+<img alt="Loading..." src={loaderanim}></img>
+
     </div>
+
+    
+
+
 </div>
 }

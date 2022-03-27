@@ -240,7 +240,7 @@ export default function DonationForm() {
                 postData();
                 setLoader(true)
                 
-                }} sx={{backgroundColor:"#1c626e"}} variant="contained">Donate</Button>
+                }} sx={{backgroundColor:"#C3023A"}} variant="contained">Donate</Button>
 
         </div>
 
